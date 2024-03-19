@@ -7,7 +7,7 @@ pkgname='ros-noetic-rqt-action'
 pkgver='0.4.9'
 _pkgver_patch=0
 arch=('any')
-pkgrel=2
+pkgrel=3
 license=('BSD')
 
 ros_makedepends=(
@@ -30,9 +30,10 @@ depends=(
 	${ros_depends[@]}
 )
 
-_dir="rqt_action-${pkgver}"
-source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/ros-visualization/rqt_action/archive/${pkgver}.tar.gz")
-sha256sums=('6f69d38f7770efd6da560c5c95438fbbed25fd2bea06e34421ed6aae2655a46c')
+_commit="fd461f410be6d7ef6beb5743251f0b4beba940e9"
+_dir="rqt_action-${_commit}"
+source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/ros-visualization/rqt_action/archive/${_commit}.tar.gz")
+sha256sums=('529ee4576ac4acb89b83b8356a79e031cb30132807c6ea83a7a37140a580ed3d')
 
 build() {
 	# Use ROS environment variables.
